@@ -5,10 +5,20 @@ This is the configuration tree for:
 A software called live-build can be used to automatically build images from
 this configuration tree.
 
-live-build can be obtained from <http://live-systems.org/devel/live-build/>.
+Dget : https://debian-administration.org/article/504/Downloading_Debian_source_packages_easily
+
+Prerequisites:
+# apt-get install dpkg
+# apt-get install devscripts (NOTE: this has commands to fetch source from dsc files)
+
+
+
+live-build can be obtained from http://http.debian.net/debian/pool/main/l/live-build/live-build_20151215.dsc
 On Debian based systems, live-build can be installed with:
 
-  # apt-get install live-build
+  # dget-x http://http.debian.net/debian/pool/main/l/live-build/live-build_20151215.dsc
+  # debuild -b -uc -us
+
 
 live-build can be used to build this image with the following command executed
 in this directory::
@@ -16,5 +26,4 @@ in this directory::
   # lb build
 
 More information about live-build and the Live Systems project can be found on
-its homepage at <http://live-systems.org/> and in the manual at
-<http://live-systems.org/manual/>.
+its homepage at https://packages.debian.org/stretch/live-build
